@@ -5,19 +5,20 @@ const PORT = 3000;
 const bodyParser = require("body-parser");
 const sendmail = require("./utils/mailUtils")
 app.use(bodyParser.json());
-app.use(
-  cors({
-    // origin: "http://localhost:5173",
-    origin: "*",
-    // origin: "https://shivrajkolwankar.netlify.app",
-    methods: ["POST", "GET", "DELETE", "PUT", "HEAD", "PATCH"],
-    credentials: true,
-    optionSuccessStatus: 200,
-  })
-);
-
+// app.use(
+//   cors({
+//     // origin: "http://localhost:5173",
+//     origin: "*",
+//     // origin: "https://shivrajkolwankar.netlify.app",
+//     methods: ["POST", "GET", "DELETE", "PUT", "HEAD", "PATCH"],
+//     credentials: true,
+//     optionSuccessStatus: 200,
+//   })
+// );
+app.use(cors({
+    origin: "*"
+}))
 app.post("/api/contactUs", async (req, res) => {
-  //console.log("vycy", req.body);
   try {
     //console.log("qwer", req.body);
     const { email, name, message } = req.body;
