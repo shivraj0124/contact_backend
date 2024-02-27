@@ -7,8 +7,8 @@ const sendmail = require("./utils/mailUtils")
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
-    // origin: "*",
+    // origin: "http://localhost:5173",
+    origin: "*",
     // origin: "https://shivrajkolwankar.netlify.app",
     methods: ["POST", "GET", "DELETE", "PUT", "HEAD", "PATCH"],
     credentials: true,
