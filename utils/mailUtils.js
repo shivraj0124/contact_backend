@@ -21,7 +21,7 @@ const sendmail = (name, email, message) => {
 
   const mailOptions = {
     from: process.env.EMAIL,
-    to: "sk40fs@gmail.com",
+    to: "shivrajkolwankar0124@gmail.com",
     subject: "Contact Us",
     text: text,
   };
