@@ -6,15 +6,15 @@ const sendmail = (name, email, message) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.email, 
+      user: process.env.email,
       pass: process.env.password,
     },
     tls: {
-      rejectUnauthorized: false, 
+      rejectUnauthorized: false,
     },
     connectionTimeout: 60000, // 60 seconds
     greetingTimeout: 30000, // 30 seconds
-    socketTimeout: 30000 // 30 seconds
+    socketTimeout: 30000, // 30 seconds
   });
 
   const text = `Name: ${name}, Email: ${email}, Message: ${message}`;
