@@ -6,22 +6,16 @@ const sendmail = (name, email, message) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.email, 
-      pass: process.env.password,
+      user: process.env.EMAIL, 
+      pass: process.env.PASSWORD,
     },
-    tls: {
-      rejectUnauthorized: false, 
-    },
-    connectionTimeout: 60000, // 60 seconds
-    greetingTimeout: 30000, // 30 seconds
-    socketTimeout: 30000 // 30 seconds
   });
 
   const text = `Name: ${name}, Email: ${email}, Message: ${message}`;
 
   const mailOptions = {
-    from: process.env.email,
-    to: "sk40fs@gmail.com",
+    from: process.env.EMAIL,
+    to: "shivrajkolwankar0124@gmail.com",
     subject: "Contact Us",
     text: text,
   };
